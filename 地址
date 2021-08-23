@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int* p = &a;//此时p为指针变量，用于存放地址
+	//p的类型为 int*
+	printf("地址为%p\n", &a);
+	printf("地址为%p\n", p);
+	*p=20;//*-解引用操作符，*p其实就是a,且改变了a中的值
+	printf("a=%d\n", a);
+
+	return 0;
+}
