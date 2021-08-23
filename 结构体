@@ -3,14 +3,16 @@ struct Yue
 {
 	char name[20];
 	short level;
-	char  战斗力[20];
+	char 战斗力[20];
 	//利用结构体类型，创建一个该类型的结构体变量
 };
 int main()
 	{
 	struct Yue x={ "克苏鲁",999,"无法窥探"};
 	printf(" 崇高的伟大存在%s\n 其等级为%d\n 吾等%s\n", x.name, x.level, x.战斗力);
-
+	x.level  = 666;
+	printf(" 不禁直呼%d\n", x.level);
+	return 0;
 
 
 
