@@ -9,5 +9,10 @@ int main()
 	*p=20;//*-解引用操作符，*p其实就是a,且改变了a中的值
 	printf("a=%d\n", a);
 
+	char ch = 'w';
+	char* s = &ch;//指针变量类型注意更换
+	*s = 'a';
+	printf("ch=%c\n", ch);
+
 	return 0;
 }
