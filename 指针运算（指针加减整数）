@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+//指针+-整数
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int* p = arr;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (p = &arr[0];p < &arr[sz];)
+	{
+		*p++ = 0;
+		//++优先，但后置，先*p=0进行赋值，然后p++地址向后推进一格，即*（p++）= 0
+		printf("%d", arr[5]);
+	}
+	return 0;
+}
