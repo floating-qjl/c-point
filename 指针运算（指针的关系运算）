@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+//指针的关系运算
+	int arr[5] = { 1,2,3,4,5 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int* p;
+
+	//第一种
+	for (p = &arr[sz ];p > &arr[0];)
+		//此处p已经越界，但是符合规定
+	{
+		*--p = 0;
+	}
+
+	//指针标准规定：允许指向数组的指针与指针最后一个元素后面的那个内存位置的指针比较
+	//但是，不允许与指向第一个元素前面的那个内存位置的指针进行比较
+
+	for (p = &arr[sz];p > &arr[0];p--)
+		//此处调整相当于后置--，会造成前置越界，不符合规定,因此少用
+	{
+		*p = 0;
+	}
+	return 0;
+}
