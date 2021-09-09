@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a = 10;
+	int* pa = &a;
+	//初始化
+	*pa = 20;
+	pa = NULL;
+	//NULL可以用来初始化指针或者进行赋值
+	//用NULL赋值则意味着指针不再指向地址
+	//且使用空指针后不能再使用它
+	if (pa != NULL)
+		//检查有效性
+	{
+		*pa = 10;
+	}
+	return 0;
+}
