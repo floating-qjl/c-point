@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct stt
+{
+	char num[12];
+	int member;
+}stt;
+//类型重定义，使得结构体类型缩写成stt
+//若无typedef，则为设定全局变量
+struct stu
+{
+	char name[10];
+	int age;
+	struct stt s;
+	int friend;
+};
+print1(stt tmp)
+{
+	printf("%s\n", tmp.num);
+}
+print2(stt* p)
+//stt 为结构体类型
+{
+	printf("%d\n", p->member);
+}
+int main()
+{
+	char arr[] = "我是傻逼";
+	struct stu s1 = { "张三",23,{"15151578945",99},5};
+	stt s2 = { "456456",111 };
+	printf("%s\n", s1.name);
+	printf("%s\n", s1.s.num);
+	printf("%d\n", s1.age);
+	printf("%d\n", s1.s.member);
+	print1(s2);
+	print2(&s2);
+	//print2比起print1更好，print1传参时进行临时拷贝，存在压栈现象，若结构体过大，会浪费时间和空间
+	//因此建议直接传地址
+	return 0;
+}
