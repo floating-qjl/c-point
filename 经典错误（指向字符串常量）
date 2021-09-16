@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	const char* p = "abcdefg";
+	//字符串常量，存储在常量存储区，而常量存储区的内容是无法修改的
+	//*p = 'W';
+	//如果用*p修改则会出现断错误
+	printf("%s\n", p);
+	return 0;
+}
