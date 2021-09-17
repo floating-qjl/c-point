@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+void test(int** pp)
+{}
+int main()
+{
+	int* p;
+	int** pp = &p;
+	test(pp);
+	test(&p);
+	int* arr[10];
+	//指针数组也可以，传过去的是第一个指针的地址
+	test(arr);
+	return 0;
+}
