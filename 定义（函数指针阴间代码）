@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+	(*(void(*)()) 0 )();
+	//最里面为函数指针类型，函数为无参，类型为void
+	//（）将 0 强制类型转换 成函数的地址，即指针
+	//* 解引用指针 0 ，调用函数，进行（）传参
+
+	void(*signal(int, void(*)(int)))(int);
+	//signal是一个函数声明
+	//signal函数的参数有两个，一个是int，第二个是函数指针，该函数指针指向的函数的参数是int，返回类型是void
+	//signal函数的返回类型也是一个函数指针：该函数指针指向的函数的参数是int，返回类型是void
+
+	//简化
+	typedef void(*ppp)(int);
+	ppp signal(int, ppp);
+
+
+	return 0;
+}
