@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+void test(char* str)
+{
+	printf("%s\n", str);
+}
+void print(void(*p)(char*))
+{
+	p("bbb");
+}
+int main()
+{
+	print(test);
+	return 0;
+}
