@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//结构体的自引用
+struct stu
+{
+	char a;
+	int data;
+	struct stu* next;
+};
+
+//链表，找到节点
+//结构体里面存放自己类型的结构体是不行的
+//因此想要找到节点，可以选择一半存放数据（数据域），一半存放下一个结点的地址（指针域）
+
+typedef struct node
+{
+	int data;
+}Node;
+//结构体自引用不能使用重命名的Node，会造成逻辑错误
+int main()
+{
+	struct node n1;
+	Node n2;
+	return 0;
+}
