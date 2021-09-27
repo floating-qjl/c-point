@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+struct
+{
+	int a;
+	char b;
+	float c;
+}x;//匿名结构体类型，没有结构体名字，因此变量名只能在这里创建
+//若成员相等，此匿名结构体指针仍无法指向另一个相同的结构体变量的地址，编译器认为它们的类型不同
+
+
+//声明一个结构体类型
+//声明一个学生类型，是想以学生类型来创建学生变量（对象）
+//描述学生：属性 - 名字 + 电话 + 性别 + 年龄 
+struct Stu
+{
+	char name[20];//名字
+	char tele[12];//电话
+	char sex[10];//性别
+	int age;
+}s4,s5,s6;//结构体全局变量
+struct Stu s3;//全局变量
+int main()
+{
+	//创建的结构体局部变量
+	struct Stu s1;
+	struct Stu s2;
+	return 0;
+}
