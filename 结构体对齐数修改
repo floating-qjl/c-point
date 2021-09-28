@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#pragma pack(4)//设置默认对齐数为 4
+struct S
+{
+	char a;
+	double b;
+};
+#pragma pack()//取消设置的默认对齐数
+//此结构体原大小为 16 个字节，修改对齐数后，变为12个字节
+int main()
+{
+	struct S s = { 0 };
+	printf("%d\n", sizeof(s));
+	return 0;
+}
+//结构在对齐方式不合适的时候，我们可以自己更改默认对齐数
