@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stddef.h>
+
+struct S
+{
+	char c;
+	int i;
+	double d;
+};
+int main()
+{
+	//offsetof()  -  为宏，可以查看结构体成员相对首元素的偏移量
+	//返回类型为size_t，参数为 结构体类型  ， 结构体成员名
+	printf("%d\n", offsetof(struct S, c));
+	printf("%d\n", offsetof(struct S, i));
+	printf("%d\n", offsetof(struct S, d));
+	return 0;
+}
