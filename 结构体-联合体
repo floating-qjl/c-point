@@ -1,4 +1,3 @@
-
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 //联合-联合体-共用体
@@ -7,14 +6,25 @@ union un
 	char a;
 	int i;
 };
-//联合体的成员共用同一块内存空间，这样一个联合变量的大小至少是最大成员的大小
+//联合体的成员共用同一块内存空间
+union hh
+{
+	int i;//对齐数4 
+	char a[5];//对齐数针对每个元素为1
+	//最大对齐数4，现在共用体占 5 个字节，因为要最大对齐数整数倍，所以必须浪费三个字节
+};
+// 联合体的大小至少是最大成员的大小
+//当最大成员大小不是最大对齐数的整数倍的时候，就要对齐到最大对齐数的整数倍
 int main()
 {
 	union un m;
+	union hh n;
 	printf("%d\n", sizeof(m));
 	printf("%p\n", &m);
 	printf("%p\n", &m.a);
 	printf("%p\n", &m.i);
 	//三个量地址相同
+	printf("%d\n", sizeof(n));
 	return 0;
+
 }
