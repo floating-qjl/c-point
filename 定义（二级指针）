@@ -5,7 +5,7 @@ int main()
 	int a = 10;
 	int* p = &a;
 	int** pa = &p;//二级指针
-	int*** ppa = &ppa;//三级指针
+	int*** ppa = &pa;//三级指针
 	**pa = 20;
 	printf("%d\n", **pa);
 	printf("%d\n", a);
